@@ -26,7 +26,7 @@ class TabBarViewController: UITabBarController {
             items[x].image = UIImage(systemName: images[x])
         }
         
-        self.tabBar.tintColor = .black
+        self.tabBar.tintColor = .init(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         
       
     }

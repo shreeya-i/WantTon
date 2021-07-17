@@ -14,6 +14,7 @@
 		6E19630A26A0F37B00385AF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630926A0F37B00385AF4 /* HomeViewController.swift */; };
 		6E19630C26A0F39900385AF4 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630B26A0F39900385AF4 /* CirclesViewController.swift */; };
 		6E2E30A426A37A4000FF7D3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E2E30A326A37A4000FF7D3E /* GoogleService-Info.plist */; };
+		6E2E30A626A3814F00FF7D3E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E30A526A3814F00FF7D3E /* Post.swift */; };
 		6EA92DE3269CFEEA0073DF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */; };
 		6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */; };
 		6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		6E19630926A0F37B00385AF4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6E19630B26A0F39900385AF4 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
 		6E2E30A326A37A4000FF7D3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E2E30A526A3814F00FF7D3E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6EA92DDF269CFEEA0073DF82 /* WantTon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantTon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				6E19630B26A0F39900385AF4 /* CirclesViewController.swift */,
 				6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */,
 				6E19630326A0EFC900385AF4 /* ProfileViewController.swift */,
+				6E2E30A526A3814F00FF7D3E /* Post.swift */,
 				6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */,
 				6EA92DED269CFEEC0073DF82 /* LaunchScreen.storyboard */,
 				6EA92DF0269CFEEC0073DF82 /* Info.plist */,
@@ -220,6 +223,7 @@
 				6E19630C26A0F39900385AF4 /* CirclesViewController.swift in Sources */,
 				6E19630626A0F0EF00385AF4 /* NotificationsViewController.swift in Sources */,
 				6EA92DE3269CFEEA0073DF82 /* AppDelegate.swift in Sources */,
+				6E2E30A626A3814F00FF7D3E /* Post.swift in Sources */,
 				6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */,
 				6E19630826A0F30700385AF4 /* TabBarViewController.swift in Sources */,
 				6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */,

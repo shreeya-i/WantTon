@@ -8,6 +8,11 @@
 import UIKit
 import FirebaseDatabase
 
+private var collectionView: UICollectionView!
+//private var posts: [Post] = []
+private let cellPadding: CGFloat = 8
+private let sectionPadding: CGFloat = 4
+
 class ProfileViewController: UIViewController {
     
     let currentpfp = UIImageView(frame: CGRect(x: 0,y: 0,width: 100,height: 100))
@@ -37,6 +42,17 @@ class ProfileViewController: UIViewController {
         cityLabel.textColor = .darkGray
         view.addSubview(cityLabel)
         
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = cellPadding
+        layout.minimumLineSpacing = cellPadding
+        layout.sectionInset = UIEdgeInsets(top: sectionPadding, left: 0, bottom: sectionPadding, right: 0)
+
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        view.addSubview(collectionView)
+        
         setUpConstraints()
     }
     
@@ -56,6 +72,14 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate ([
             cityLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             cityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
+        ])
+        
+        let collectionViewPadding: CGFloat = 12
+        NSLayoutConstraint.activate ([
+            collectionView.topAnchor.constraint(equalTo: currentpfp.bottomAnchor, constant: 50),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: collectionViewPadding),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: collectionViewPadding),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding),
         ])
     }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class ProfileViewController: UIViewController {
         
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.font = UIFont.systemFont(ofSize: 16)
-        cityLabel.text = "Fremont, CA"
+        cityLabel.text = "New York City, NY"
         cityLabel.textColor = .darkGray
         view.addSubview(cityLabel)
         

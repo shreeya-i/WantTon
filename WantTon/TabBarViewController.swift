@@ -27,6 +27,8 @@ class TabBarViewController: UITabBarController {
         }
         
         self.tabBar.tintColor = .black
+        
+      
     }
     
 

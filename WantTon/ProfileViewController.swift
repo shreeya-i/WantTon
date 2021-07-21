@@ -20,13 +20,14 @@ class ProfileViewController: UIViewController {
     let nameLabel = UILabel()
     let cityLabel = UILabel()
     let samplepost = Post(image: "carrots.jpeg", caption: "homegrown carrots")
+    let samplepost2 = Post(image: "potatoes.jpeg", caption: "homegrown potatoes")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
-        posts = [samplepost, samplepost, samplepost, samplepost, samplepost]
+        posts = [samplepost, samplepost2, samplepost, samplepost, samplepost2, samplepost, samplepost2]
         
         currentpfp.layer.masksToBounds = false
         currentpfp.layer.cornerRadius = currentpfp.frame.height/2

@@ -38,15 +38,15 @@ class HomeViewController: UIViewController {
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            createPostButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 500),
+            createPostButton.topAnchor.constraint(equalTo: sampleimage.bottomAnchor, constant: 50),
             createPostButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             createPostButton.widthAnchor.constraint(equalToConstant: 200),
-            createPostButton.heightAnchor.constraint(equalToConstant: 100),
+            createPostButton.heightAnchor.constraint(equalToConstant: 70),
         ])
         
         NSLayoutConstraint.activate ([
-            sampleimage.bottomAnchor.constraint(equalTo: createPostButton.topAnchor, constant: -50),
             sampleimage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sampleimage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -70),
             sampleimage.heightAnchor.constraint(equalToConstant: 300),
             sampleimage.widthAnchor.constraint(equalToConstant: 300)
         ])

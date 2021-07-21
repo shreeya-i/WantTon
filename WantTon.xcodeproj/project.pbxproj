@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13490CA726A886DC003F4590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13490CA626A886DC003F4590 /* GoogleService-Info.plist */; };
 		42858AE6A0980E9D0CEDE0A4 /* Pods_WantTon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */; };
 		6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630326A0EFC900385AF4 /* ProfileViewController.swift */; };
 		6E19630626A0F0EF00385AF4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */; };
 		6E19630826A0F30700385AF4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630726A0F30700385AF4 /* TabBarViewController.swift */; };
 		6E19630A26A0F37B00385AF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630926A0F37B00385AF4 /* HomeViewController.swift */; };
 		6E19630C26A0F39900385AF4 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630B26A0F39900385AF4 /* CirclesViewController.swift */; };
-		6E2E30A426A37A4000FF7D3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E2E30A326A37A4000FF7D3E /* GoogleService-Info.plist */; };
 		6E2E30A626A3814F00FF7D3E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E30A526A3814F00FF7D3E /* Post.swift */; };
 		6E2E30A826A388B000FF7D3E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E30A726A388B000FF7D3E /* PostCollectionViewCell.swift */; };
 		6EA92DE3269CFEEA0073DF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */; };
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13490CA626A886DC003F4590 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15EA7467B3037484BCCCF0D5 /* Pods-WantTon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.debug.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.debug.xcconfig"; sourceTree = "<group>"; };
 		5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantTon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E19630326A0EFC900385AF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		6E19630726A0F30700385AF4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6E19630926A0F37B00385AF4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6E19630B26A0F39900385AF4 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
-		6E2E30A326A37A4000FF7D3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E2E30A526A3814F00FF7D3E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6E2E30A726A388B000FF7D3E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EA92DDF269CFEEA0073DF82 /* WantTon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantTon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +83,7 @@
 		6EA92DE1269CFEEA0073DF82 /* WantTon */ = {
 			isa = PBXGroup;
 			children = (
+				13490CA626A886DC003F4590 /* GoogleService-Info.plist */,
 				6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */,
 				6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */,
 				6E19630726A0F30700385AF4 /* TabBarViewController.swift */,
@@ -95,7 +96,6 @@
 				6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */,
 				6EA92DED269CFEEC0073DF82 /* LaunchScreen.storyboard */,
 				6EA92DF0269CFEEC0073DF82 /* Info.plist */,
-				6E2E30A326A37A4000FF7D3E /* GoogleService-Info.plist */,
 			);
 			path = WantTon;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			files = (
 				6EA92DEF269CFEEC0073DF82 /* LaunchScreen.storyboard in Resources */,
 				6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */,
-				6E2E30A426A37A4000FF7D3E /* GoogleService-Info.plist in Resources */,
+				13490CA726A886DC003F4590 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

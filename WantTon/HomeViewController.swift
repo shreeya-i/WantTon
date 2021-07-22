@@ -59,6 +59,10 @@ class HomeViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true)
     }
+    
+    func hello() {
+        let _ = "hi"
+    }
 
 
 }

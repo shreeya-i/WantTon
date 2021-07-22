@@ -11,11 +11,22 @@ class HomeViewController: UIViewController {
     
     private var createPostButton = UIButton()
     private var sampleimage = UIImageView()
+    let postsTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        setUpViews()
+        setUpConstraints()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func setUpViews() {
+        postsTableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(postsTableView)
         
         createPostButton.backgroundColor = UIColor(red: 123/255, green: 190/255, blue: 123/255, alpha: 1.0)
         createPostButton.setTitle("Create Listing", for: .normal)
@@ -30,13 +41,16 @@ class HomeViewController: UIViewController {
         sampleimage.backgroundColor = .secondarySystemBackground
         sampleimage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sampleimage)
-        
-        setUpConstraints()
-
-        // Do any additional setup after loading the view.
     }
     
     func setUpConstraints() {
+        NSLayoutConstraint.activate([
+            postsTableView.topAnchor.constraint(equalTo: createPostButton.bottomAnchor, constant: 50),
+            postsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            postsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            postsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
         NSLayoutConstraint.activate([
             createPostButton.topAnchor.constraint(equalTo: sampleimage.bottomAnchor, constant: 50),
             createPostButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

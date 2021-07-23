@@ -9,7 +9,10 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
     
-//    private var sampleimage = UIImageView()
+    //GONNA NEED TO SET UP A NEW CAMERA BUTTON!!
+    
+    private var postImage = UIImageView()
+    let enterCaption = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +24,32 @@ class CreatePostViewController: UIViewController {
 //               picker.allowsEditing = true
 //               picker.delegate = self
 //               present(picker, animated: true)
-//
-//        sampleimage.backgroundColor = .secondarySystemBackground
-//             sampleimage.translatesAutoresizingMaskIntoConstraints = false
-//             view.addSubview(sampleimage)
+
+        postImage.backgroundColor = .secondarySystemBackground
+        postImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(postImage)
+        
+        enterCaption.translatesAutoresizingMaskIntoConstraints = false
+        enterCaption.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        view.addSubview(enterCaption)
 
         setUpConstraints()
     }
     
     func setUpConstraints() {
-//                NSLayoutConstraint.activate ([
-//                    sampleimage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//                    sampleimage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -200),
-//                    sampleimage.heightAnchor.constraint(equalToConstant: 200),
-//                    sampleimage.widthAnchor.constraint(equalToConstant: 200)
-//                ])
+                NSLayoutConstraint.activate ([
+                    postImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                    postImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
+                    postImage.widthAnchor.constraint(equalToConstant: 250),
+                    postImage.heightAnchor.constraint(equalToConstant: 250)
+                ])
+        
+        NSLayoutConstraint.activate([
+            enterCaption.topAnchor.constraint(equalTo: postImage.bottomAnchor, constant: 10),
+            enterCaption.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            enterCaption.widthAnchor.constraint(equalToConstant: 300),
+            enterCaption.heightAnchor.constraint(equalToConstant: 200)
+            ])
         
     }
     

@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var createPostButton = UIButton()
-  //  private var sampleimage = UIImageView()
     let postsTableView = UITableView()
     let cellReuseIdentifier = "hello"
     
@@ -46,10 +45,7 @@ class HomeViewController: UIViewController {
         createPostButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         createPostButton.setImage(UIImage(systemName: "plus"), for: .normal)
         view.addSubview(createPostButton)
-        
-//        sampleimage.backgroundColor = .secondarySystemBackground
-//        sampleimage.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(sampleimage)
+
     }
     
     func setUpConstraints() {
@@ -66,44 +62,16 @@ class HomeViewController: UIViewController {
             postsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        
-//        NSLayoutConstraint.activate ([
-//            sampleimage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            sampleimage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -200),
-//            sampleimage.heightAnchor.constraint(equalToConstant: 200),
-//            sampleimage.widthAnchor.constraint(equalToConstant: 200)
-//        ])
     }
     
     
     @objc func didTapButton() {
         let pushViewController = CreatePostViewController()
         self.present(pushViewController, animated: true, completion: nil)
-        
-//        let picker = UIImagePickerController()
-//        picker.sourceType = .camera
-//        picker.allowsEditing = true
-//        picker.delegate = self
-//        present(picker, animated: true)
+
     }
 
 }
-
-//extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-//
-//        picker.dismiss(animated: true, completion: nil)
-//        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-//            return
-//        }
-//        sampleimage.image = image
-//    }
-//}
 
 //extension HomeViewController: UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

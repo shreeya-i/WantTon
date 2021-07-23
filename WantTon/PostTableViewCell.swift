@@ -9,6 +9,7 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
+    let userName = UILabel()
     let productImage = UIImageView()
     let caption = UILabel()
     
@@ -22,6 +23,11 @@ class PostTableViewCell: UITableViewCell {
     
     func setUpViews(){
         
+        userName.font = UIFont.boldSystemFont(ofSize: 20)
+        userName.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        userName.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(userName)
+        
         productImage.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(productImage)
         
@@ -33,8 +39,14 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setUpConstraints() {
+        
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+            userName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
+        ])
+        
+        NSLayoutConstraint.activate([
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
             productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -60),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
@@ -42,11 +54,12 @@ class PostTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             caption.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 10),
-            caption.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
+            caption.leadingAnchor.constraint(equalTo: userName.leadingAnchor)
         ])
     }
     
     func configure(with post: Post){
+        userName.text = post.user
         productImage.image = UIImage(named: post.image)
         caption.text = post.caption
     }

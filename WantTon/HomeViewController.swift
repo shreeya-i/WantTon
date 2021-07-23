@@ -29,8 +29,8 @@ class HomeViewController: UIViewController {
     }
     
     func createDummyData() {
-        let samplepost = Post(image: "carrots.jpeg", caption: "homegrown carrots")
-        let samplepost2 = Post(image: "potatoes.jpeg", caption: "3 potatoes")
+        let samplepost = Post(user: "Jennifer Doe", image: "carrots.jpeg", caption: "homegrown carrots")
+        let samplepost2 = Post(user: "Rick Morty", image: "potatoes.jpeg", caption: "3 potatoes")
         postData = [samplepost, samplepost2, samplepost, samplepost, samplepost2, samplepost, samplepost2]
     }
     

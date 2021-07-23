@@ -8,13 +8,15 @@
 import Foundation
 
 class Post {
+    var user: String
     var image: String
     var caption: String
     //var poster: String
     //var interest
     //var completion: Boolean
     
-    init(image: String, caption: String){
+    init(user: String, image: String, caption: String){
+        self.user = user
         self.image = image
         self.caption = caption
     }

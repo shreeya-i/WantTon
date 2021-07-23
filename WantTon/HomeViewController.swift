@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            postsTableView.topAnchor.constraint(equalTo: createPostButton.bottomAnchor, constant: 30),
+            postsTableView.topAnchor.constraint(equalTo: createPostButton.bottomAnchor, constant: 10),
             postsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             postsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             postsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)

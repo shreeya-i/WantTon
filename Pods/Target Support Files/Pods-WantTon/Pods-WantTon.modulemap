@@ -1,0 +1,6 @@
+framework module Pods_WantTon {
+  umbrella header "Pods-WantTon-umbrella.h"
+
+  export *
+  module * { export * }
+}

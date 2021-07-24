@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13BEDBBF26AC8F4900FB5972 /* GoogleService-Info (5).plist in Resources */ = {isa = PBXBuildFile; fileRef = 13BEDBBE26AC8F4900FB5972 /* GoogleService-Info (5).plist */; };
 		42858AE6A0980E9D0CEDE0A4 /* Pods_WantTon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */; };
 		6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630326A0EFC900385AF4 /* ProfileViewController.swift */; };
 		6E19630626A0F0EF00385AF4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */; };
@@ -19,11 +20,11 @@
 		6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */; };
 		6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */; };
 		6EA92DEF269CFEEC0073DF82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA92DED269CFEEC0073DF82 /* LaunchScreen.storyboard */; };
-		6ED2E8D026AA1B0B00717D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ED2E8CF26AA1B0B00717D2C /* GoogleService-Info.plist */; };
 		6ED2E8D226AA253A00717D2C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8D126AA253A00717D2C /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13BEDBBE26AC8F4900FB5972 /* GoogleService-Info (5).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (5).plist"; sourceTree = "<group>"; };
 		15EA7467B3037484BCCCF0D5 /* Pods-WantTon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.debug.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.debug.xcconfig"; sourceTree = "<group>"; };
 		5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantTon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E19630326A0EFC900385AF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EA92DEE269CFEEC0073DF82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EA92DF0269CFEEC0073DF82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ED2E8CF26AA1B0B00717D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6ED2E8D126AA253A00717D2C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7995854B2FB9F8442CBFC6EA /* Pods-WantTon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.release.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +85,7 @@
 		6EA92DE1269CFEEA0073DF82 /* WantTon */ = {
 			isa = PBXGroup;
 			children = (
+				13BEDBBE26AC8F4900FB5972 /* GoogleService-Info (5).plist */,
 				6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */,
 				6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */,
 				6E19630726A0F30700385AF4 /* TabBarViewController.swift */,
@@ -98,7 +99,6 @@
 				6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */,
 				6EA92DED269CFEEC0073DF82 /* LaunchScreen.storyboard */,
 				6EA92DF0269CFEEC0073DF82 /* Info.plist */,
-				6ED2E8CF26AA1B0B00717D2C /* GoogleService-Info.plist */,
 			);
 			path = WantTon;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BEDBBF26AC8F4900FB5972 /* GoogleService-Info (5).plist in Resources */,
 				6EA92DEF269CFEEC0073DF82 /* LaunchScreen.storyboard in Resources */,
 				6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */,
-				6ED2E8D026AA1B0B00717D2C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

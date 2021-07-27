@@ -20,6 +20,9 @@ class ProfileViewController: UIViewController {
     let nameLabel = UILabel()
     let cityLabel = UILabel()
     let editButton = UIButton()
+    let reviewsLabel = UILabel()
+    let stars = UIImageView()
+    let transactionCount = UILabel()
     
     let samplepost = Post(user: "Jennifer Doe", image: "carrots.jpeg", caption: "homegrown carrots")
     let samplepost2 = Post(user: "Rick Morty", image: "potatoes.jpeg", caption: "3 potatoes")
@@ -56,6 +59,20 @@ class ProfileViewController: UIViewController {
         editButton.setTitle("Edit", for: .normal)
         view.addSubview(editButton)
         
+        reviewsLabel.translatesAutoresizingMaskIntoConstraints = false
+        reviewsLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        reviewsLabel.text = "Reviews:"
+        view.addSubview(reviewsLabel)
+        
+        stars.translatesAutoresizingMaskIntoConstraints = false
+        stars.image = UIImage(named: "stars")
+        view.addSubview(stars)
+        
+        transactionCount.translatesAutoresizingMaskIntoConstraints = false
+        transactionCount.font = UIFont.systemFont(ofSize: 16)
+        transactionCount.text = "You have \(posts.count) transactions"
+        view.addSubview(transactionCount)
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = cellPadding
@@ -78,7 +95,7 @@ class ProfileViewController: UIViewController {
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             currentpfp.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            currentpfp.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            currentpfp.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             currentpfp.widthAnchor.constraint(equalToConstant: 100),
             currentpfp.heightAnchor.constraint(equalToConstant: 100)
             ])
@@ -93,6 +110,23 @@ class ProfileViewController: UIViewController {
             cityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
         
+        NSLayoutConstraint.activate ([
+            reviewsLabel.topAnchor.constraint(equalTo: currentpfp.bottomAnchor, constant: 25),
+            reviewsLabel.leadingAnchor.constraint(equalTo: currentpfp.leadingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            stars.topAnchor.constraint(equalTo: reviewsLabel.topAnchor, constant: -4),
+            stars.leadingAnchor.constraint(equalTo: reviewsLabel.trailingAnchor, constant: 10),
+            stars.widthAnchor.constraint(equalToConstant: 100),
+            stars.heightAnchor.constraint(equalToConstant: 30)
+            ])
+        
+        NSLayoutConstraint.activate ([
+            transactionCount.topAnchor.constraint(equalTo: reviewsLabel.bottomAnchor, constant: 15),
+            transactionCount.leadingAnchor.constraint(equalTo: currentpfp.leadingAnchor)
+        ])
+        
         NSLayoutConstraint.activate([
             editButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             editButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
@@ -101,7 +135,7 @@ class ProfileViewController: UIViewController {
         
         let collectionViewPadding: CGFloat = 12
         NSLayoutConstraint.activate ([
-            postsView.topAnchor.constraint(equalTo: currentpfp.bottomAnchor, constant: 50),
+            postsView.topAnchor.constraint(equalTo: transactionCount.bottomAnchor, constant: 15),
             postsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: collectionViewPadding),
             postsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: collectionViewPadding),
             postsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding),

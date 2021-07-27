@@ -91,7 +91,7 @@ class CreatePostViewController: UIViewController {
     }
     
     @objc func didTapPost() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 

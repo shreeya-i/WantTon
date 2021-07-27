@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     let currentpfp = UIImageView(frame: CGRect(x: 0,y: 0,width: 100,height: 100))
     let nameLabel = UILabel()
     let cityLabel = UILabel()
+    let editButton = UIButton()
+    
     let samplepost = Post(user: "Jennifer Doe", image: "carrots.jpeg", caption: "homegrown carrots")
     let samplepost2 = Post(user: "Rick Morty", image: "potatoes.jpeg", caption: "3 potatoes")
 
@@ -26,6 +28,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+      //  self.navigationController?.isNavigationBarHidden = true
         
         posts = [samplepost, samplepost2, samplepost, samplepost, samplepost2, samplepost, samplepost2]
         
@@ -46,6 +49,12 @@ class ProfileViewController: UIViewController {
         cityLabel.text = "New York City, NY"
         cityLabel.textColor = .darkGray
         view.addSubview(cityLabel)
+        
+        editButton.translatesAutoresizingMaskIntoConstraints = false
+        editButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+        editButton.addTarget(self, action: #selector(pushButtonPressed), for: .touchUpInside)
+        editButton.setTitle("Edit", for: .normal)
+        view.addSubview(editButton)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -68,7 +77,7 @@ class ProfileViewController: UIViewController {
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            currentpfp.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            currentpfp.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             currentpfp.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             currentpfp.widthAnchor.constraint(equalToConstant: 100),
             currentpfp.heightAnchor.constraint(equalToConstant: 100)
@@ -84,6 +93,12 @@ class ProfileViewController: UIViewController {
             cityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
         
+        NSLayoutConstraint.activate([
+            editButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            editButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+        ])
+        
+        
         let collectionViewPadding: CGFloat = 12
         NSLayoutConstraint.activate ([
             postsView.topAnchor.constraint(equalTo: currentpfp.bottomAnchor, constant: 50),
@@ -91,6 +106,12 @@ class ProfileViewController: UIViewController {
             postsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: collectionViewPadding),
             postsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding),
         ])
+    }
+    
+    @objc func pushButtonPressed() {
+        let pushViewController = EditProfileViewController()
+        navigationController?.pushViewController(pushViewController, animated: true)
+       // pushViewController.delegate = self
     }
 
 }

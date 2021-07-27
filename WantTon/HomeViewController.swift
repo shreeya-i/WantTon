@@ -67,7 +67,7 @@ class HomeViewController: UIViewController {
     
     @objc func didTapButton() {
         let pushViewController = CreatePostViewController()
-        self.present(pushViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(pushViewController, animated: true)
 
     }
 

@@ -9,65 +9,105 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
     
-    //GONNA NEED TO SET UP A NEW CAMERA BUTTON!!
     
     private var postImage = UIImageView()
     let enterCaption = UITextView()
+    let cameraButton = UIButton()
+    let postButton = UIButton()
+    let circlesLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        
-//        let picker = UIImagePickerController()
-//               picker.sourceType = .camera
-//               picker.allowsEditing = true
-//               picker.delegate = self
-//               present(picker, animated: true)
 
         postImage.backgroundColor = .secondarySystemBackground
         postImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(postImage)
         
+        cameraButton.translatesAutoresizingMaskIntoConstraints = false
+        cameraButton.tintColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        cameraButton.addTarget(self, action: #selector(didTapCamera), for: .touchUpInside)
+        cameraButton.setImage(UIImage(systemName: "camera"), for: .normal)
+        view.addSubview(cameraButton)
+        
+        postButton.translatesAutoresizingMaskIntoConstraints = false
+        postButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+        postButton.addTarget(self, action: #selector(didTapPost), for: .touchUpInside)
+        postButton.setTitle("Post", for: .normal)
+        view.addSubview(postButton)
+        
         enterCaption.translatesAutoresizingMaskIntoConstraints = false
-        enterCaption.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        enterCaption.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.2)
         view.addSubview(enterCaption)
+        
+        circlesLabel.text = "Add to Circles:"
+        circlesLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        circlesLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        circlesLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(circlesLabel)
 
         setUpConstraints()
     }
     
     func setUpConstraints() {
-                NSLayoutConstraint.activate ([
-                    postImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                    postImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
-                    postImage.widthAnchor.constraint(equalToConstant: 250),
-                    postImage.heightAnchor.constraint(equalToConstant: 250)
-                ])
-        
-        NSLayoutConstraint.activate([
-            enterCaption.topAnchor.constraint(equalTo: postImage.bottomAnchor, constant: 10),
-            enterCaption.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            enterCaption.widthAnchor.constraint(equalToConstant: 300),
-            enterCaption.heightAnchor.constraint(equalToConstant: 200)
+        NSLayoutConstraint.activate ([
+                postImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                postImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
+                postImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                postImage.heightAnchor.constraint(equalToConstant: 340)
             ])
         
+        NSLayoutConstraint.activate([
+            postButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            postButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            cameraButton.bottomAnchor.constraint(equalTo: postButton.bottomAnchor, constant: -6),
+            cameraButton.trailingAnchor.constraint(equalTo: postButton.leadingAnchor, constant: -17)
+        ])
+        
+        NSLayoutConstraint.activate([
+            enterCaption.topAnchor.constraint(equalTo: postImage.bottomAnchor),
+            enterCaption.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            enterCaption.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            enterCaption.heightAnchor.constraint(equalToConstant: 50),
+            ])
+        
+        NSLayoutConstraint.activate([
+            circlesLabel.topAnchor.constraint(equalTo: enterCaption.bottomAnchor, constant: 30),
+            circlesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
+        ])
+        
+    }
+    
+    @objc func didTapCamera() {
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.allowsEditing = true
+            picker.delegate = self
+            present(picker, animated: true)
+    }
+    
+    @objc func didTapPost() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
 }
 
-//extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-//
-//        picker.dismiss(animated: true, completion: nil)
-//        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-//            return
-//        }
-//        sampleimage.image = image
-//    }
-//}
+extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        postImage.image = image
+    }
+}

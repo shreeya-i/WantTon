@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+// import FirebaseDatabase
 
 private var postsView: UICollectionView!
 private var posts: [Post] = []

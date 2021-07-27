@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     func setUpViews() {
         postsTableView.translatesAutoresizingMaskIntoConstraints = false
         postsTableView.register(PostTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-   //     postsTableView.delegate = self
+        postsTableView.delegate = self
         postsTableView.dataSource = self
         view.addSubview(postsTableView)
         
@@ -68,17 +68,21 @@ class HomeViewController: UIViewController {
     @objc func didTapButton() {
         let pushViewController = CreatePostViewController()
         navigationController?.pushViewController(pushViewController, animated: true)
-
     }
 
 }
 
-//extension HomeViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cell = tableView.cellForRow(at: indexPath) as! PostTableViewCell
-//        let postObject = postData[indexPath.row]
-//    }
-//}
+        let post = postData[indexPath.row]
+        let vc = SinglePostViewController()
+        self.present(vc, animated: true) {
+            vc.configure(with: post)
+        }
+        
+    }
+}
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

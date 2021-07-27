@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController {
         
         let collectionViewPadding: CGFloat = 12
         NSLayoutConstraint.activate ([
-            postsView.topAnchor.constraint(equalTo: transactionCount.bottomAnchor, constant: 15),
+            postsView.topAnchor.constraint(equalTo: transactionCount.bottomAnchor, constant: 25),
             postsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: collectionViewPadding),
             postsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: collectionViewPadding),
             postsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding),

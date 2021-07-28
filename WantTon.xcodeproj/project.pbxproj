@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13BEDBC826AC989C00FB5972 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEDBC726AC989C00FB5972 /* SignInView.swift */; };
+		13FAA1A126B0E66300C9E308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13FAA1A026B0E66300C9E308 /* GoogleService-Info.plist */; };
+		13FAA1A326B0EA3A00C9E308 /* SignInViewControllerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FAA1A226B0EA3900C9E308 /* SignInViewControllerTemp.swift */; };
 		42858AE6A0980E9D0CEDE0A4 /* Pods_WantTon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */; };
 		6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630326A0EFC900385AF4 /* ProfileViewController.swift */; };
 		6E19630626A0F0EF00385AF4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */; };
@@ -24,11 +25,11 @@
 		6ED2E8D426AB836900717D2C /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8D326AB836900717D2C /* CreatePostViewController.swift */; };
 		6ED2E8DA26B0A8A500717D2C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8D926B0A8A500717D2C /* EditProfileViewController.swift */; };
 		6ED2E8DC26B0B16800717D2C /* SinglePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8DB26B0B16800717D2C /* SinglePostViewController.swift */; };
-		6ED2E8DE26B0C66A00717D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ED2E8DD26B0C66A00717D2C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13BEDBC726AC989C00FB5972 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		13FAA1A026B0E66300C9E308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13FAA1A226B0EA3900C9E308 /* SignInViewControllerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerTemp.swift; sourceTree = "<group>"; };
 		15EA7467B3037484BCCCF0D5 /* Pods-WantTon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.debug.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.debug.xcconfig"; sourceTree = "<group>"; };
 		5C96999B874AE5AD75967D70 /* Pods_WantTon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantTon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E19630326A0EFC900385AF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		6ED2E8D326AB836900717D2C /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		6ED2E8D926B0A8A500717D2C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		6ED2E8DB26B0B16800717D2C /* SinglePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostViewController.swift; sourceTree = "<group>"; };
-		6ED2E8DD26B0C66A00717D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7995854B2FB9F8442CBFC6EA /* Pods-WantTon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.release.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,9 +93,10 @@
 		6EA92DE1269CFEEA0073DF82 /* WantTon */ = {
 			isa = PBXGroup;
 			children = (
+				13FAA1A026B0E66300C9E308 /* GoogleService-Info.plist */,
 				6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */,
 				6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */,
-				13BEDBC726AC989C00FB5972 /* SignInView.swift */,
+				13FAA1A226B0EA3900C9E308 /* SignInViewControllerTemp.swift */,
 				6E19630726A0F30700385AF4 /* TabBarViewController.swift */,
 				6E19630926A0F37B00385AF4 /* HomeViewController.swift */,
 				6ED2E8D126AA253A00717D2C /* PostTableViewCell.swift */,
@@ -108,7 +109,6 @@
 				6E2E30A726A388B000FF7D3E /* PostCollectionViewCell.swift */,
 				6E2E30A526A3814F00FF7D3E /* Post.swift */,
 				6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */,
-				6ED2E8DD26B0C66A00717D2C /* GoogleService-Info.plist */,
 				6EA92DED269CFEEC0073DF82 /* LaunchScreen.storyboard */,
 				6EA92DF0269CFEEC0073DF82 /* Info.plist */,
 			);
@@ -184,8 +184,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EA92DEF269CFEEC0073DF82 /* LaunchScreen.storyboard in Resources */,
-				6ED2E8DE26B0C66A00717D2C /* GoogleService-Info.plist in Resources */,
 				6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */,
+				13FAA1A126B0E66300C9E308 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 				6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */,
 				6ED2E8DC26B0B16800717D2C /* SinglePostViewController.swift in Sources */,
 				6E19630826A0F30700385AF4 /* TabBarViewController.swift in Sources */,
-				13BEDBC826AC989C00FB5972 /* SignInView.swift in Sources */,
+				13FAA1A326B0EA3A00C9E308 /* SignInViewControllerTemp.swift in Sources */,
 				6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */,
 				6ED2E8D426AB836900717D2C /* CreatePostViewController.swift in Sources */,
 				6ED2E8D226AA253A00717D2C /* PostTableViewCell.swift in Sources */,
@@ -392,13 +392,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DA975L5WD5;
+				DEVELOPMENT_TEAM = 9D29M7RT3U;
 				INFOPLIST_FILE = WantTon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shreeyaindap.WantTon;
+				PRODUCT_BUNDLE_IDENTIFIER = snehashreeyaindap.WantTon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,13 +412,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DA975L5WD5;
+				DEVELOPMENT_TEAM = 9D29M7RT3U;
 				INFOPLIST_FILE = WantTon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shreeyaindap.WantTon;
+				PRODUCT_BUNDLE_IDENTIFIER = snehashreeyaindap.WantTon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

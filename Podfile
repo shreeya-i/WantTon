@@ -9,6 +9,8 @@ target 'WantTon' do
 	
 	pod 'Firebase/Analytics'
     	pod 'Firebase/Database' 
+	pod 'FirebaseUI/Auth'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Core'
 
 end

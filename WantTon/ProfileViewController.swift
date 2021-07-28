@@ -24,8 +24,8 @@ class ProfileViewController: UIViewController {
     let stars = UIImageView()
     let transactionCount = UILabel()
     
-    let samplepost = Post(user: "Jennifer Doe", image: "carrots.jpeg", caption: "homegrown carrots")
-    let samplepost2 = Post(user: "Rick Morty", image: "potatoes.jpeg", caption: "3 potatoes")
+    let samplepost = Post(user: "Tyler Creator", image: "carrots.jpeg", caption: "homegrown carrots", distance: "", address: "Times Square")
+    let samplepost2 = Post(user: "Tyler Creator", image: "potatoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
 
     override func viewDidLoad() {
         super.viewDidLoad()

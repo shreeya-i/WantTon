@@ -10,77 +10,104 @@ import FirebaseAuth
 
 class SignInViewControllerTemp: UIViewController {
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = "Log In"
-        label.font = .systemFont(ofSize: 24, weight: .semibold)
-        return label
-    } ()
-    
-    
-    
-    private let emailField: UITextField = {
-        let emailField  = UITextField()
-        emailField.placeholder = "Email Address"
-        emailField.layer.borderWidth = 1
-        emailField.layer.borderColor = UIColor.black.cgColor
-        return emailField
-    } ()
-    
-    private let passwordField: UITextField = {
-        let passField = UITextField()
-        passField.placeholder = "Password"
-        passField.layer.borderWidth = 1
-        passField.layer.borderColor = UIColor.black.cgColor
-        return passField
-    } ()
-    
-    private let button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor =  .systemGreen
-        button.setTitleColor(.white,for: .normal)
-        button.setTitle("Continue", for: .normal)
-        return button
-    } ()
+    let background = UIImageView()
+    let titleLabel = UILabel()
+    let emailField = UITextField()
+    let passwordField = UITextField()
+    let button = UIButton()
     
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        view.addSubview(label)
-        view.addSubview(emailField)
-        view.addSubview(passwordField)
-        view.addSubview(button)
-        view.backgroundColor = .green
         
-        button.addTarget(self,action:#selector(didTapButton),for: .touchUpInside)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 35)
+        titleLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        titleLabel.text = "WanTon"
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleLabel)
+        
+        emailField.translatesAutoresizingMaskIntoConstraints = false
+        emailField.borderStyle = UITextField.BorderStyle.roundedRect
+        emailField.keyboardType = UIKeyboardType.default
+        emailField.placeholder = "Email Address"
+        emailField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        view.addSubview(emailField)
+        
+        passwordField.translatesAutoresizingMaskIntoConstraints = false
+        passwordField.borderStyle = UITextField.BorderStyle.roundedRect
+        passwordField.keyboardType = UIKeyboardType.default
+        passwordField.placeholder = "Password"
+        passwordField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        view.addSubview(passwordField)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+       // editButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.setTitle("Log In", for: .normal)
+        button.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        view.addSubview(button)
+    
+        view.backgroundColor = .white
+        
+        setUpConstraints()
         
     }
     
-    override func viewDidLayoutSubviews(){
-        super.viewDidLayoutSubviews()
-        label.frame = CGRect (x: 20
-                              ,y:100,
-                              width: view.frame.size.width-40,
-                              height:80)
-        emailField.frame = CGRect (x:20,
-                                   y:label.frame.origin.y+label.frame.size.height+10,
-                                   width: view.frame.size.width-40,
-                                   height: 50)
-        passwordField.frame = CGRect (x:20,
-                                      y:emailField.frame.origin.y+emailField.frame.size.height+10,
-                                      width: view.frame.size.width-40,
-                                      height:50)
-        button.frame = CGRect (x:20,
-                               y:passwordField.frame.origin.y+passwordField.frame.size.height+10,
-                               width:view.frame.size.width-40,
-                               height:80)
+    func setUpConstraints() {
+        NSLayoutConstraint.activate ([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate ([
+            emailField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            emailField.heightAnchor.constraint(equalToConstant: 45),
+            emailField.widthAnchor.constraint(equalToConstant: 295)
+        ])
+        
+        NSLayoutConstraint.activate ([
+            passwordField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 7),
+            passwordField.heightAnchor.constraint(equalToConstant: 45),
+            passwordField.widthAnchor.constraint(equalToConstant: 295)
+        ])
+        
+        NSLayoutConstraint.activate ([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
+            button.heightAnchor.constraint(equalToConstant: 40),
+            button.widthAnchor.constraint(equalToConstant: 130)
+        ])
+        
     }
+    
+//    override func viewDidLayoutSubviews(){
+//        super.viewDidLayoutSubviews()
+//        label.frame = CGRect (x: 20
+//                              ,y:100,
+//                              width: view.frame.size.width-40,
+//                              height:80)
+//        emailField.frame = CGRect (x:20,
+//                                   y:label.frame.origin.y+label.frame.size.height+10,
+//                                   width: view.frame.size.width-40,
+//                                   height: 50)
+//        passwordField.frame = CGRect (x:20,
+//                                      y:emailField.frame.origin.y+emailField.frame.size.height+10,
+//                                      width: view.frame.size.width-40,
+//                                      height:50)
+//        button.frame = CGRect (x:20,
+//                               y:passwordField.frame.origin.y+passwordField.frame.size.height+10,
+//                               width:view.frame.size.width-40,
+//                               height:80)
+//    }
     
     override func viewDidAppear(_ animated:Bool){
         super.viewDidAppear(animated)
         emailField.becomeFirstResponder()
     }
+    
     @objc private func didTapButton() {
         print("Continue button tapped")
         guard let email = emailField.text, !email.isEmpty,
@@ -101,7 +128,7 @@ class SignInViewControllerTemp: UIViewController {
                 return
             }
                 print("you have signed in")
-                  strongSelf.label.isHidden = true
+                  strongSelf.titleLabel.isHidden = true
                   strongSelf.emailField.isHidden = true
                   strongSelf.passwordField.isHidden = true
                   strongSelf.button.isHidden = true
@@ -127,7 +154,7 @@ class SignInViewControllerTemp: UIViewController {
                                                       return
                                               }
                                                   print("you have signed in")
-                                                  strongSelf.label.isHidden = true
+                                                  strongSelf.titleLabel.isHidden = true
                                                   strongSelf.emailField.isHidden = true
                                                   strongSelf.passwordField.isHidden = true
                                                   strongSelf.button.isHidden = true

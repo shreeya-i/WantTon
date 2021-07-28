@@ -60,9 +60,11 @@ class ProfileViewController: UIViewController {
         view.addSubview(cityLabel)
         
         editButton.translatesAutoresizingMaskIntoConstraints = false
-        editButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+       // editButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+        editButton.setTitleColor(.white, for: .normal)
         editButton.addTarget(self, action: #selector(pushButtonPressed), for: .touchUpInside)
         editButton.setTitle("Edit", for: .normal)
+        editButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         view.addSubview(editButton)
         
         reviewsLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -14,6 +14,12 @@ private let cellPadding: CGFloat = 8
 private let sectionPadding: CGFloat = 4
 private let cellReuseIdentifier = "hello"
 
+protocol ProfileDelegate: AnyObject {
+   // func changePfp(newPfp: String)
+    func changeName(newName: String)
+    func changeCity(newCity: String)
+}
+
 class ProfileViewController: UIViewController {
     
     let currentpfp = UIImageView(frame: CGRect(x: 0,y: 0,width: 100,height: 100))
@@ -145,7 +151,7 @@ class ProfileViewController: UIViewController {
     @objc func pushButtonPressed() {
         let pushViewController = EditProfileViewController()
         navigationController?.pushViewController(pushViewController, animated: true)
-       // pushViewController.delegate = self
+        pushViewController.delegate = self
     }
 
 }
@@ -168,5 +174,17 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = (postsView.frame.width - cellPadding) / 2
         return CGSize(width: size, height: size)
+    }
+}
+
+extension ProfileViewController: ProfileDelegate {
+//    func changePfp(newPfp: String){
+//        currentpfp.image = (UIImage(named: newPfp))
+//    }
+    func changeName(newName: String){
+        nameLabel.text = newName
+    }
+    func changeCity(newCity: String) {
+        cityLabel.text = newCity
     }
 }

@@ -26,6 +26,7 @@
 		6ED2E8DA26B0A8A500717D2C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8D926B0A8A500717D2C /* EditProfileViewController.swift */; };
 		6ED2E8DC26B0B16800717D2C /* SinglePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8DB26B0B16800717D2C /* SinglePostViewController.swift */; };
 		6ED2E8E026B22D6B00717D2C /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8DF26B22D6A00717D2C /* Circle.swift */; };
+		6ED2E8E226B2382500717D2C /* CircleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED2E8E126B2382400717D2C /* CircleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		6ED2E8D926B0A8A500717D2C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		6ED2E8DB26B0B16800717D2C /* SinglePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostViewController.swift; sourceTree = "<group>"; };
 		6ED2E8DF26B22D6A00717D2C /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		6ED2E8E126B2382400717D2C /* CircleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTableViewCell.swift; sourceTree = "<group>"; };
 		7995854B2FB9F8442CBFC6EA /* Pods-WantTon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantTon.release.xcconfig"; path = "Target Support Files/Pods-WantTon/Pods-WantTon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				6ED2E8D326AB836900717D2C /* CreatePostViewController.swift */,
 				6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */,
 				6E19630B26A0F39900385AF4 /* CirclesViewController.swift */,
+				6ED2E8E126B2382400717D2C /* CircleTableViewCell.swift */,
 				6ED2E8DF26B22D6A00717D2C /* Circle.swift */,
 				6E19630326A0EFC900385AF4 /* ProfileViewController.swift */,
 				6ED2E8D926B0A8A500717D2C /* EditProfileViewController.swift */,
@@ -250,6 +253,7 @@
 				6E19630426A0EFC900385AF4 /* ProfileViewController.swift in Sources */,
 				6ED2E8DC26B0B16800717D2C /* SinglePostViewController.swift in Sources */,
 				6E19630826A0F30700385AF4 /* TabBarViewController.swift in Sources */,
+				6ED2E8E226B2382500717D2C /* CircleTableViewCell.swift in Sources */,
 				13FAA1A326B0EA3A00C9E308 /* SignInViewControllerTemp.swift in Sources */,
 				6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */,
 				6ED2E8D426AB836900717D2C /* CreatePostViewController.swift in Sources */,

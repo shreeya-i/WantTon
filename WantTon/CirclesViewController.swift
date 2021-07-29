@@ -9,6 +9,10 @@ import UIKit
 
 class CirclesViewController: UIViewController {
     
+    let circleTableView = UITableView()
+    let cellReuseIdentifier = "hello"
+    var circleData : [Circle] = []
+    
     let circlesLabel = UILabel()
 
     override func viewDidLoad() {
@@ -22,8 +26,21 @@ class CirclesViewController: UIViewController {
         circlesLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(circlesLabel)
         
+        circleTableView.translatesAutoresizingMaskIntoConstraints = false
+        //circleTableView.register(PostTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+//        circleTableView.delegate = self
+//        circleTableView.dataSource = self
+        view.addSubview(circleTableView)
+        
+        createDummyData()
         setUpConstraints()
     }
+    
+    func createDummyData() {
+        
+    }
+    
+    
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([

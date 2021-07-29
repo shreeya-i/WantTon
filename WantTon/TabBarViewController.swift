@@ -12,6 +12,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         let vc1 = HomeViewController()
         let vc2 = NotificationsViewController()
         let vc4 = CirclesViewController()

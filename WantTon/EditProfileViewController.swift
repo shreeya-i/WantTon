@@ -12,6 +12,7 @@ import UIKit
 class EditProfileViewController: UIViewController {
     
     let saveButton = UIButton()
+    let backButton = UIButton()
     let pfp = UIImageView(frame: CGRect(x: 0,y: 0,width: 150,height: 150))
     let line1 = UIView()
     let nameLabel = UILabel()
@@ -37,6 +38,12 @@ class EditProfileViewController: UIViewController {
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         saveButton.setTitle("Save", for: .normal)
         view.addSubview(saveButton)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.tintColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
+        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        view.addSubview(backButton)
         
         pfp.layer.masksToBounds = false
         pfp.layer.cornerRadius = pfp.frame.height/2
@@ -111,6 +118,11 @@ class EditProfileViewController: UIViewController {
         NSLayoutConstraint.activate([
             saveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+        ])
+        
+        NSLayoutConstraint.activate([
+            backButton.bottomAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: -6),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
@@ -195,6 +207,10 @@ class EditProfileViewController: UIViewController {
         //delegate?.changePfp(newPfp: T##String)
         delegate?.changeName(newName: enterName.text!)
         delegate?.changeCity(newCity: enterCity.text!)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func didTapBack() {
         navigationController?.popViewController(animated: true)
     }
 

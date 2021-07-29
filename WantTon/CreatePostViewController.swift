@@ -13,6 +13,7 @@ class CreatePostViewController: UIViewController {
     private var postImage = UIImageView()
     let enterCaption = UITextView()
     let cameraButton = UIButton()
+    let backButton = UIButton()
     let postButton = UIButton()
     let circlesLabel = UILabel()
 
@@ -24,6 +25,12 @@ class CreatePostViewController: UIViewController {
         postImage.backgroundColor = .secondarySystemBackground
         postImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(postImage)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.tintColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
+        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        view.addSubview(backButton)
         
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         cameraButton.tintColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
@@ -58,6 +65,11 @@ class CreatePostViewController: UIViewController {
                 postImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 postImage.heightAnchor.constraint(equalToConstant: 340)
             ])
+        
+        NSLayoutConstraint.activate([
+            backButton.bottomAnchor.constraint(equalTo: postButton.bottomAnchor, constant: -6),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ])
         
         NSLayoutConstraint.activate([
             postButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -95,7 +107,10 @@ class CreatePostViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
+    @objc func didTapBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

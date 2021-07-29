@@ -22,6 +22,10 @@ class SignInViewControllerTemp: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         
+        background.image = UIImage(named: "background")
+        background.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(background)
+       
         titleLabel.font = UIFont.boldSystemFont(ofSize: 35)
         titleLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         titleLabel.text = "WanTon"
@@ -59,6 +63,14 @@ class SignInViewControllerTemp: UIViewController {
     }
     
     func setUpConstraints() {
+        
+        NSLayoutConstraint.activate ([
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            background.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
         NSLayoutConstraint.activate ([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 185),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)

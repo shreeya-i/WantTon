@@ -20,6 +20,8 @@ class SignInViewControllerTemp: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         titleLabel.font = UIFont.boldSystemFont(ofSize: 35)
         titleLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         titleLabel.text = "WanTon"
@@ -45,6 +47,8 @@ class SignInViewControllerTemp: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.setTitle("Log In", for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 15
         button.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         view.addSubview(button)
     
@@ -56,7 +60,7 @@ class SignInViewControllerTemp: UIViewController {
     
     func setUpConstraints() {
         NSLayoutConstraint.activate ([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 185),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -109,6 +113,10 @@ class SignInViewControllerTemp: UIViewController {
     }
     
     @objc private func didTapButton() {
+        
+        let pushViewController = TabBarViewController()
+        navigationController?.pushViewController(pushViewController, animated: true)
+        
         print("Continue button tapped")
         guard let email = emailField.text, !email.isEmpty,
               let password = passwordField.text, !password.isEmpty else{

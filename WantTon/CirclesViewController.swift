@@ -7,14 +7,17 @@
 
 import UIKit
 
-class CirclesViewController: UIViewController {
+class CirclesViewController: UIViewController, UITextFieldDelegate {
     
     let joinButton = UIButton()
     let circleTableView = UITableView()
     let cellReuseIdentifier = "hello"
     var circleData : [Circle] = []
+    var filteredData : [Circle] = []
+    var filtered = false
     
     let circlesLabel = UILabel()
+    let searchField = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,17 @@ class CirclesViewController: UIViewController {
         circlesLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(circlesLabel)
         
+        searchField.translatesAutoresizingMaskIntoConstraints = false
+        searchField.borderStyle = UITextField.BorderStyle.roundedRect
+        searchField.keyboardType = UIKeyboardType.default
+        //searchField.placeholder = UIImage(named: "search")
+        searchField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        searchField.delegate = self
+        view.addSubview(searchField)
+        
         circleTableView.translatesAutoresizingMaskIntoConstraints = false
         circleTableView.register(CircleTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-//        circleTableView.delegate = self
+        circleTableView.delegate = self
         circleTableView.dataSource = self
         view.addSubview(circleTableView)
         
@@ -56,15 +67,21 @@ class CirclesViewController: UIViewController {
     }
     
     
-    
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             circlesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35),
             circlesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         
+        NSLayoutConstraint.activate ([
+            searchField.leadingAnchor.constraint(equalTo: circlesLabel.leadingAnchor),
+            searchField.topAnchor.constraint(equalTo: circlesLabel.bottomAnchor, constant: 30),
+            searchField.heightAnchor.constraint(equalToConstant: 45),
+            searchField.widthAnchor.constraint(equalToConstant: 295)
+        ])
+        
         NSLayoutConstraint.activate([
-            circleTableView.topAnchor.constraint(equalTo: circlesLabel.bottomAnchor, constant: 50),
+            circleTableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 50),
             circleTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             circleTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             circleTableView.heightAnchor.constraint(equalToConstant: 250)
@@ -77,18 +94,56 @@ class CirclesViewController: UIViewController {
             joinButton.widthAnchor.constraint(equalToConstant: 130)
         ])
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = searchField.text {
+            if string.count == 0 {
+                filterText(String(text.dropLast()))
+            } else {
+                filterText(text + string)
+            }
+        }
+        return true
+    }
+    
+    func filterText(_ query: String) {
+        filteredData.removeAll()
+        for circle in circleData{
+            if circle.name.lowercased().starts(with: query.lowercased()){
+                filteredData.append(circle)
+            }
+        }
+        circleTableView.reloadData()
+        filtered = true
+    }
 
+}
+
+
+extension CirclesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }
 
 extension CirclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return circleData.count
+        if !filteredData.isEmpty{
+            return filteredData.count
+        }
+        return filtered ? 0 : circleData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = circleTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! CircleTableViewCell
-        let circle = circleData[indexPath.row]
-        cell.configure(with: circle)
+        if !filteredData.isEmpty {
+            let circle = filteredData[indexPath.row]
+            cell.configure(with: circle)
+        }
+        else {
+            let circle = circleData[indexPath.row]
+            cell.configure(with: circle)
+        }
         return cell
     }
 }

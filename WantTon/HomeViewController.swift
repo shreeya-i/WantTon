@@ -7,13 +7,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITextFieldDelegate {
     
     private var createPostButton = UIButton()
     let postsTableView = UITableView()
     let cellReuseIdentifier = "hello"
     
     var postData : [Post] = []
+    var filteredData : [Post] = []
+    var filtered = false
+    let searchField = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,15 @@ class HomeViewController: UIViewController {
     }
     
     func setUpViews() {
+        
+        searchField.translatesAutoresizingMaskIntoConstraints = false
+        searchField.borderStyle = UITextField.BorderStyle.roundedRect
+        searchField.keyboardType = UIKeyboardType.default
+        //searchField.placeholder = UIImage(named: "search")
+        searchField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        searchField.delegate = self
+        view.addSubview(searchField)
+        
         postsTableView.translatesAutoresizingMaskIntoConstraints = false
         postsTableView.register(PostTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         postsTableView.delegate = self
@@ -50,18 +62,47 @@ class HomeViewController: UIViewController {
     
     func setUpConstraints() {
         
+        NSLayoutConstraint.activate ([
+            searchField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            searchField.topAnchor.constraint(equalTo: createPostButton.topAnchor),
+            searchField.heightAnchor.constraint(equalToConstant: 37),
+            searchField.widthAnchor.constraint(equalToConstant: 280)
+        ])
+        
         NSLayoutConstraint.activate([
-            createPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            createPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             createPostButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
         
         NSLayoutConstraint.activate([
-            postsTableView.topAnchor.constraint(equalTo: createPostButton.bottomAnchor, constant: 10),
+            postsTableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 15),
             postsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             postsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             postsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = searchField.text {
+            if string.count == 0 {
+                filterText(String(text.dropLast()))
+            } else {
+                filterText(text + string)
+            }
+        }
+        return true
+    }
+    
+    func filterText(_ query: String) {
+        filteredData.removeAll()
+        for post in postData{
+            if (post.caption.lowercased().starts(with: query.lowercased()) || post.user.lowercased().starts(with: query.lowercased())){
+                filteredData.append(post)
+            }
+        }
+        postsTableView.reloadData()
+        filtered = true
     }
     
     
@@ -86,13 +127,22 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        if !filteredData.isEmpty{
+            return filteredData.count
+        }
+        return filtered ? 0 : postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postsTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! PostTableViewCell
-        let post = postData[indexPath.row]
-        cell.configure(with: post)
+        if !filteredData.isEmpty {
+            let post = filteredData[indexPath.row]
+            cell.configure(with: post)
+        }
+        else {
+            let post = postData[indexPath.row]
+            cell.configure(with: post)
+        }
         return cell
     }
 }

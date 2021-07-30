@@ -10,13 +10,13 @@ import UIKit
 class CirclesViewController: UIViewController, UITextFieldDelegate {
     
     let joinButton = UIButton()
+    let circlesLabel = UILabel()
     let circleTableView = UITableView()
     let cellReuseIdentifier = "hello"
+    
     var circleData : [Circle] = []
     var filteredData : [Circle] = []
     var filtered = false
-    
-    let circlesLabel = UILabel()
     let searchField = UITextField()
 
     override func viewDidLoad() {
@@ -59,11 +59,11 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createDummyData() {
-        let samplecircle1 = Circle(name: "Neighborhood 1")
-        let samplecircle2 = Circle(name: "Neighborhood 2")
-        let samplecircle3 = Circle(name: "Neighborhood 3")
-        let samplecircle4 = Circle(name: "Neighborhood 4")
-        circleData = [samplecircle1, samplecircle2, samplecircle3, samplecircle4, samplecircle1, samplecircle2]
+        let samplecircle1 = Circle(name: "Felipe Common Neighbors")
+        let samplecircle2 = Circle(name: "Cornell University")
+        let samplecircle3 = Circle(name: "Yale Neighborhood")
+        let samplecircle4 = Circle(name: "BU Food Exchange")
+        circleData = [samplecircle1, samplecircle2, samplecircle3, samplecircle4]
     }
     
     

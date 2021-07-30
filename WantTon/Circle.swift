@@ -9,8 +9,10 @@ import Foundation
 
 class Circle {
     var name: String
+   // var image: String
     
     init(name: String){
         self.name = name
+       // self.image = image
     }
 }

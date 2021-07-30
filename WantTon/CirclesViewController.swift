@@ -84,7 +84,7 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
             circleTableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 50),
             circleTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             circleTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            circleTableView.heightAnchor.constraint(equalToConstant: 250)
+            circleTableView.heightAnchor.constraint(equalToConstant: 350)
         ])
         
         NSLayoutConstraint.activate ([
@@ -145,5 +145,9 @@ extension CirclesViewController: UITableViewDataSource {
             cell.configure(with: circle)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

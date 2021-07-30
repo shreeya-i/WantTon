@@ -47,8 +47,8 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         joinButton.translatesAutoresizingMaskIntoConstraints = false
        // editButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
         joinButton.setTitleColor(.white, for: .normal)
-        //joinButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        joinButton.setTitle("Log In", for: .normal)
+        joinButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        joinButton.setTitle("Join More", for: .normal)
         joinButton.clipsToBounds = true
         joinButton.layer.cornerRadius = 15
         joinButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
@@ -56,6 +56,11 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         
         createDummyData()
         setUpConstraints()
+    }
+    
+    @objc func didTapButton() {
+        let pushViewController = JoinCirclesViewController()
+        navigationController?.pushViewController(pushViewController, animated: true)
     }
     
     func createDummyData() {

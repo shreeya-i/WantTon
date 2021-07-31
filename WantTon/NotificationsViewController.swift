@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotificationsViewController: UIViewController {
     
@@ -27,6 +28,33 @@ class NotificationsViewController: UIViewController {
      
         setUpViews()
         setUpConstraints()
+        
+        // Asking for permission
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+        }
+        
+        // Creating notification content
+        let content = UNMutableNotificationContent()
+        content.title = "New Notification Alert"
+        content.body = "Open the app WanTon!"
+        
+        // Creating notification trigger
+        let date = Date().addingTimeInterval(5)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        // Creating request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+    
+        // Registering the request
+        center.add(request) { (error) in
+            // check error parameter and handle any errors
+        }
+        
+    
     }
     
     func setUpViews() {

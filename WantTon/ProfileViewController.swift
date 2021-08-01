@@ -32,6 +32,11 @@ class ProfileViewController: UIViewController {
     
     let samplepost = Post(user: "Tyler Creator", image: "carrots.jpeg", caption: "homegrown carrots", distance: "", address: "Times Square")
     let samplepost2 = Post(user: "Tyler Creator", image: "potatoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
+    let samplepost3 = Post(user: "Tyler Creator", image: "eggs.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
+    let samplepost4 = Post(user: "Tyler Creator", image: "bread.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
+    let samplepost5 = Post(user: "Tyler Creator", image: "avocadoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
+    let samplepost6 = Post(user: "Tyler Creator", image: "tomatoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
+    let samplepost7 = Post(user: "Tyler Creator", image: "grains.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +44,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
       //  self.navigationController?.isNavigationBarHidden = true
         
-        posts = [samplepost, samplepost2, samplepost, samplepost, samplepost2, samplepost, samplepost2]
+        posts = [samplepost, samplepost2, samplepost3, samplepost4, samplepost5, samplepost6, samplepost7]
         
         currentpfp.layer.masksToBounds = false
         currentpfp.layer.cornerRadius = currentpfp.frame.height/2

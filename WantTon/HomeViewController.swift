@@ -33,12 +33,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func createDummyData() {
         let samplepost = Post(user: "Jenny Doe", image: "carrots.jpeg", caption: "homegrown carrots", distance: "< 1 mile away", address: "342 Monroe Blvd")
         let samplepost2 = Post(user: "Rick Morty", image: "potatoes.jpeg", caption: "Potatoes, grown in our own backyard", distance: "2 miles away", address: "Pacific Commons Starbucks")
-        let samplepost3 = Post(user: "Belle Ta Ko", image: "avocadoes.jpeg", caption: "Avocadoes! bought too many by accident", distance: "2 miles away", address: "Pacific Commons Starbucks")
-        let samplepost4 = Post(user: "Jonah Arizona", image: "bread.jpeg", caption: "freshly baked sourdough bread", distance: "2 miles away", address: "Pacific Commons Starbucks")
-        let samplepost5 = Post(user: "Teri Dactyl", image: "tomatoes.jpeg", caption: "tomatoes, have some unripe ones too", distance: "2 miles away", address: "Pacific Commons Starbucks")
+        let samplepost3 = Post(user: "Belle Ta Ko", image: "avocadoes.jpeg", caption: "Avocadoes! bought too many by accident", distance: "1.5 miles away", address: "Pacific Commons Starbucks")
+        let samplepost4 = Post(user: "Jonah Arizona", image: "bread.jpeg", caption: "freshly baked sourdough bread", distance: "< 1 mile away", address: "Pacific Commons Starbucks")
+        let samplepost5 = Post(user: "Teri Dactyl", image: "tomatoes.jpeg", caption: "tomatoes, have some unripe ones too", distance: "< 1 mile away", address: "Pacific Commons Starbucks")
         let samplepost6 = Post(user: "Usnavi Alnigh", image: "grains.jpeg", caption: "grains! unsure what they are", distance: "2 miles away", address: "Pacific Commons Starbucks")
-        let samplepost7 = Post(user: "Annie Rex Cion", image: "eggs.jpeg", caption: "Eggs from my chicken", distance: "2 miles away", address: "Pacific Commons Starbucks")
-        postData = [samplepost7, samplepost6, samplepost5, samplepost4, samplepost3, samplepost2, samplepost]
+        let samplepost7 = Post(user: "Annie Smith", image: "eggs.jpeg", caption: "Eggs from my chicken", distance: "1.5 miles away", address: "Pacific Commons Starbucks")
+        postData = [samplepost4, samplepost, samplepost5, samplepost6, samplepost3, samplepost2, samplepost7]
     }
     
     func setUpViews() {

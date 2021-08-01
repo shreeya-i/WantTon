@@ -10,7 +10,7 @@ import UIKit
 class CircleTableViewCell: UITableViewCell {
     
     let circleLabel = UILabel()
-    let circleImage = UIImageView(frame: CGRect(x: 0,y: 0,width: 50,height: 50))
+    let circleImage = UIImageView(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,26 +30,26 @@ class CircleTableViewCell: UITableViewCell {
         circleImage.layer.cornerRadius = circleImage.frame.height/2
         circleImage.clipsToBounds = true
         circleImage.translatesAutoresizingMaskIntoConstraints = false
-        circleImage.image = UIImage(named: "defaultpfp.jpeg")
         contentView.addSubview(circleImage)
     }
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            circleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            circleLabel.leadingAnchor.constraint(equalTo: circleImage.trailingAnchor, constant: 40),
             circleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            circleImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            circleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            circleImage.widthAnchor.constraint(equalToConstant: 50),
-            circleImage.heightAnchor.constraint(equalToConstant: 50)
+            circleImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            circleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            circleImage.widthAnchor.constraint(equalToConstant: 70),
+            circleImage.heightAnchor.constraint(equalToConstant: 70)
             ])
     }
     
     func configure(with circle: Circle){
         circleLabel.text = circle.name
+        circleImage.image = UIImage(named: circle.image)
     }
     
     required init?(coder: NSCoder) {

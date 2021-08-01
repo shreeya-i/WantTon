@@ -64,10 +64,10 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createDummyData() {
-        let samplecircle1 = Circle(name: "Felipe Common Neighbors")
-        let samplecircle2 = Circle(name: "Cornell University")
-        let samplecircle3 = Circle(name: "Yale Neighborhood")
-        let samplecircle4 = Circle(name: "BU Food Exchange")
+        let samplecircle1 = Circle(name: "Felipe Common Neighbors", image: "group1.jpeg")
+        let samplecircle2 = Circle(name: "Cornell University", image: "group2.jpeg")
+        let samplecircle3 = Circle(name: "Yale Neighborhood", image: "group3.jpeg")
+        let samplecircle4 = Circle(name: "BU Food Exchange", image: "group4.jpeg")
         circleData = [samplecircle1, samplecircle2, samplecircle3, samplecircle4]
     }
     

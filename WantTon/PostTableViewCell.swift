@@ -58,7 +58,7 @@ class PostTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
-            productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -60),
+            productImage.heightAnchor.constraint(equalToConstant: 410),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])

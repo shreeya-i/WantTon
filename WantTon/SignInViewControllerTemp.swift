@@ -12,6 +12,7 @@ class SignInViewControllerTemp: UIViewController {
     
     let background = UIImageView()
     let titleLabel = UILabel()
+    let nameField = UITextField()
     let emailField = UITextField()
     let passwordField = UITextField()
     let button = UIButton()
@@ -31,6 +32,13 @@ class SignInViewControllerTemp: UIViewController {
         titleLabel.text = "WanTon"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
+        
+        nameField.translatesAutoresizingMaskIntoConstraints = false
+        nameField.borderStyle = UITextField.BorderStyle.roundedRect
+        nameField.keyboardType = UIKeyboardType.default
+        nameField.placeholder = "Name"
+        nameField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+        view.addSubview(nameField)
         
         emailField.translatesAutoresizingMaskIntoConstraints = false
         emailField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -77,22 +85,29 @@ class SignInViewControllerTemp: UIViewController {
         ])
         
         NSLayoutConstraint.activate ([
+            nameField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
+            nameField.heightAnchor.constraint(equalToConstant: 45),
+            nameField.widthAnchor.constraint(equalToConstant: 295)
+        ])
+        
+        NSLayoutConstraint.activate ([
             emailField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            emailField.topAnchor.constraint(equalTo: nameField.bottomAnchor, constant: 10),
             emailField.heightAnchor.constraint(equalToConstant: 45),
             emailField.widthAnchor.constraint(equalToConstant: 295)
         ])
         
         NSLayoutConstraint.activate ([
             passwordField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 7),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 10),
             passwordField.heightAnchor.constraint(equalToConstant: 45),
             passwordField.widthAnchor.constraint(equalToConstant: 295)
         ])
         
         NSLayoutConstraint.activate ([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
+            button.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 35),
             button.heightAnchor.constraint(equalToConstant: 40),
             button.widthAnchor.constraint(equalToConstant: 130)
         ])

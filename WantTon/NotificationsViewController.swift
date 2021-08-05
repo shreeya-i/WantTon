@@ -21,9 +21,19 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
 
     private let tableView: UITableView = {
         let tableView = UITableView()
+//        tableView.isHidden = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
+    
+//    private let spinner: UIActivityIndicatorView = {
+//        let spinner = UIActivityIndicatorView(style: .large)
+//        spinner.hidesWhenStopped = true
+//        spinner.tintColor = .label
+//        return spinner
+//    }()
+    
+    private lazy var noNotificationsView = NoNotificationsView()
     
     let notificationsLabel = UILabel()
     let todaylabel = UILabel()
@@ -40,14 +50,16 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Notifications"
+        navigationItem.title = "Notifications"
         view.backgroundColor = .white
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background")
         backgroundImage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundImage, at: 0)
-        view.addSubview(tableView)
+//        view.addSubview(spinner)
+//        spinner.startAnimating()
+        view.addSubview(noNotificationsView)
         tableView.delegate = self
         tableView.dataSource = self
      
@@ -57,9 +69,20 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+//    private func addNoNotificationsView() {
+//        tableView.isHidden = true
+//        view.addSubview(tableView)
+//        noNotificationsView.frame = CGRect(x: 0, y: 0, width: view.width/2, height: view.width/4)
+//        noNotificationsView.center = view.center
+//    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        noNotificationsView.frame = CGRect(x: 0, y: 0, width: view.width/2, height: view.width/4)
+        noNotificationsView.center = view.center
+//        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//        spinner.center = view.center
     }
     
     func setUpViews() {

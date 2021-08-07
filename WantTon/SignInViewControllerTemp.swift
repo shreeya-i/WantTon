@@ -12,10 +12,11 @@ class SignInViewControllerTemp: UIViewController {
     
     let background = UIImageView()
     let titleLabel = UILabel()
-    let nameField = UITextField()
+   // let nameField = UITextField()
     let emailField = UITextField()
     let passwordField = UITextField()
     let button = UIButton()
+    let signUpButton = UIButton()
     
     
     override func viewDidLoad(){
@@ -33,12 +34,12 @@ class SignInViewControllerTemp: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
-        nameField.translatesAutoresizingMaskIntoConstraints = false
-        nameField.borderStyle = UITextField.BorderStyle.roundedRect
-        nameField.keyboardType = UIKeyboardType.default
-        nameField.placeholder = "Name"
-        nameField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
-        view.addSubview(nameField)
+//        nameField.translatesAutoresizingMaskIntoConstraints = false
+//        nameField.borderStyle = UITextField.BorderStyle.roundedRect
+//        nameField.keyboardType = UIKeyboardType.default
+//        nameField.placeholder = "Name"
+//        nameField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+//        view.addSubview(nameField)
         
         emailField.translatesAutoresizingMaskIntoConstraints = false
         emailField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -63,6 +64,16 @@ class SignInViewControllerTemp: UIViewController {
         button.layer.cornerRadius = 15
         button.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         view.addSubview(button)
+        
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.setTitleColor(UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0), for: .normal)
+        //signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
+        signUpButton.setTitle("Sign Up", for: .normal)
+        //signUpButton.clipsToBounds = true
+       // signUpButton.layer.cornerRadius = 15
+       // signUpButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        view.addSubview(signUpButton)
     
         view.backgroundColor = .white
         
@@ -84,16 +95,16 @@ class SignInViewControllerTemp: UIViewController {
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        NSLayoutConstraint.activate ([
-            nameField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nameField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
-            nameField.heightAnchor.constraint(equalToConstant: 45),
-            nameField.widthAnchor.constraint(equalToConstant: 295)
-        ])
+//        NSLayoutConstraint.activate ([
+//            nameField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            nameField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
+//            nameField.heightAnchor.constraint(equalToConstant: 45),
+//            nameField.widthAnchor.constraint(equalToConstant: 295)
+//        ])
         
         NSLayoutConstraint.activate ([
             emailField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailField.topAnchor.constraint(equalTo: nameField.bottomAnchor, constant: 10),
+            emailField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
             emailField.heightAnchor.constraint(equalToConstant: 45),
             emailField.widthAnchor.constraint(equalToConstant: 295)
         ])
@@ -110,6 +121,13 @@ class SignInViewControllerTemp: UIViewController {
             button.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 35),
             button.heightAnchor.constraint(equalToConstant: 40),
             button.widthAnchor.constraint(equalToConstant: 130)
+        ])
+        
+        NSLayoutConstraint.activate ([
+            signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            signUpButton.heightAnchor.constraint(equalToConstant: 40),
+            signUpButton.widthAnchor.constraint(equalToConstant: 100)
         ])
         
     }
@@ -171,6 +189,13 @@ class SignInViewControllerTemp: UIViewController {
             })
     
 }
+    
+    @objc func didTapSignUp() {
+        let vc = SignUpViewController()
+        self.present(vc, animated: true)
+        
+    }
+    
     func showCreateAccount(email: String, password: String){
          let  alert = UIAlertController(title: "Create Account",
                                     message: "Would you like to create an account",

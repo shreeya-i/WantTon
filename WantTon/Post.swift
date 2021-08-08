@@ -8,6 +8,9 @@
 import Foundation
 
 class Post {
+    
+    //var imagePassed = UIImage()
+    
     var user: String
     var image: String
     var caption: String

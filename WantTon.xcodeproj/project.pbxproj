@@ -21,6 +21,7 @@
 		6E2E30A826A388B000FF7D3E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E30A726A388B000FF7D3E /* PostCollectionViewCell.swift */; };
 		6E93645626BB8353002DE972 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E93645526BB8353002DE972 /* GoogleService-Info.plist */; };
 		6E93645826BF4F14002DE972 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E93645726BF4F14002DE972 /* SignUpViewController.swift */; };
+		6E93645A26BF522A002DE972 /* AddToCircleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E93645926BF522A002DE972 /* AddToCircleTableViewCell.swift */; };
 		6EA92DE3269CFEEA0073DF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */; };
 		6EA92DE5269CFEEA0073DF82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */; };
 		6EA92DEC269CFEEC0073DF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA92DEB269CFEEC0073DF82 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		6E2E30A726A388B000FF7D3E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		6E93645526BB8353002DE972 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E93645726BF4F14002DE972 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6E93645926BF522A002DE972 /* AddToCircleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCircleTableViewCell.swift; sourceTree = "<group>"; };
 		6EA92DDF269CFEEA0073DF82 /* WantTon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantTon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA92DE2269CFEEA0073DF82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EA92DE4269CFEEA0073DF82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				6ED2E8D126AA253A00717D2C /* PostTableViewCell.swift */,
 				6ED2E8DB26B0B16800717D2C /* SinglePostViewController.swift */,
 				6ED2E8D326AB836900717D2C /* CreatePostViewController.swift */,
+				6E93645926BF522A002DE972 /* AddToCircleTableViewCell.swift */,
 				02D11CA826BB82E100F13A85 /* Dimensions.swift */,
 				02D11CA626BB82CC00F13A85 /* NoNotificationsView.swift */,
 				6E19630526A0F0EF00385AF4 /* NotificationsViewController.swift */,
@@ -277,6 +280,7 @@
 				6E93645826BF4F14002DE972 /* SignUpViewController.swift in Sources */,
 				6ED2E8D426AB836900717D2C /* CreatePostViewController.swift in Sources */,
 				02D11CA926BB82E100F13A85 /* Dimensions.swift in Sources */,
+				6E93645A26BF522A002DE972 /* AddToCircleTableViewCell.swift in Sources */,
 				6ED2E8D226AA253A00717D2C /* PostTableViewCell.swift in Sources */,
 				6E19630A26A0F37B00385AF4 /* HomeViewController.swift in Sources */,
 				6E2E30A826A388B000FF7D3E /* PostCollectionViewCell.swift in Sources */,

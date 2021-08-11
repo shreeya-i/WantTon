@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CircleDelegate: AnyObject {
+    func addCircle(newName: String, newImage: String)
+}
+
 class CirclesViewController: UIViewController, UITextFieldDelegate {
     
     let joinButton = UIButton()
@@ -154,5 +158,13 @@ extension CirclesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+}
+
+extension CirclesViewController: CircleDelegate {
+    func addCircle(newName: String, newImage: String){
+        let newCircle = Circle(name: newName, image: newImage)
+        circleData.append(newCircle)
+        filteredData.append(newCircle)
     }
 }

@@ -14,6 +14,8 @@ class JoinCirclesViewController: UIViewController {
     let circleTableView = UITableView()
     let cellReuseIdentifier = "hello"
     var circleData : [Circle] = []
+    
+    weak var delegate: CircleDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +63,13 @@ class JoinCirclesViewController: UIViewController {
     @objc func didTapBack() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 extension JoinCirclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+//        circleData.remove(at: indexPath.row)
+//        circleTableView.reloadData()
+//        delegate?.addCircle(newName: "hello", newImage: "group1.jpeg")
     }
 }
 

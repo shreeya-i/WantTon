@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let userDefaults = UserDefaults.standard
+        userDefaults.register(defaults: [
+            "userName": "Tyler Creator",
+            "userCity": "New York City, NY"
+        ])
+        
         return true
     }
 

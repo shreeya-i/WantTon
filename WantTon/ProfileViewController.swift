@@ -30,6 +30,8 @@ class ProfileViewController: UIViewController {
     let stars = UIImageView()
     let transactionCount = UILabel()
     
+    let userDefaults = UserDefaults.standard
+    
     let samplepost = Post(user: "Tyler Creator", image: "carrots.jpeg", caption: "homegrown carrots", distance: "", address: "Times Square")
     let samplepost2 = Post(user: "Tyler Creator", image: "potatoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
     let samplepost3 = Post(user: "Tyler Creator", image: "eggs.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
@@ -103,6 +105,7 @@ class ProfileViewController: UIViewController {
         postsView.delegate = self
         
         setUpConstraints()
+        fillUserLabelValues()
     }
     
     func setUpConstraints() {
@@ -154,6 +157,14 @@ class ProfileViewController: UIViewController {
             postsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: collectionViewPadding),
             postsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -collectionViewPadding),
         ])
+    }
+    
+    func fillUserLabelValues() {
+        if let userNamee = userDefaults.string(forKey: "userName"),
+           let userCityy = userDefaults.string(forKey: "userCity"){
+            nameLabel.text = userNamee
+            cityLabel.text = userCityy
+        }
     }
     
     @objc func pushButtonPressed() {

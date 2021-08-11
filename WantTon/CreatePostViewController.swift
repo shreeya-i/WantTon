@@ -126,7 +126,7 @@ class CreatePostViewController: UIViewController {
     
     @objc func didTapCamera() {
             let picker = UIImagePickerController()
-            picker.sourceType = .camera
+            picker.sourceType = .photoLibrary
             picker.allowsEditing = true
             picker.delegate = self
             present(picker, animated: true)

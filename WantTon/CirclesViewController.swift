@@ -13,6 +13,7 @@ protocol CircleDelegate: AnyObject {
 
 class CirclesViewController: UIViewController, UITextFieldDelegate {
     
+    let background = UIImageView()
     let joinButton = UIButton()
     let circlesLabel = UILabel()
     let circleTableView = UITableView()
@@ -27,6 +28,10 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+//        background.image = UIImage(named: "background")
+//        background.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(background)
         
         circlesLabel.font = UIFont.boldSystemFont(ofSize: 25)
         circlesLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
@@ -43,6 +48,7 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(searchField)
         
         circleTableView.translatesAutoresizingMaskIntoConstraints = false
+        circleTableView.backgroundColor = .clear
         circleTableView.register(CircleTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         circleTableView.delegate = self
         circleTableView.dataSource = self
@@ -77,6 +83,13 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
     
     
     func setUpConstraints() {
+//        NSLayoutConstraint.activate ([
+//            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            background.topAnchor.constraint(equalTo: view.topAnchor),
+//            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            background.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//        ])
+        
         NSLayoutConstraint.activate([
             circlesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35),
             circlesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
@@ -145,6 +158,7 @@ extension CirclesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = circleTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! CircleTableViewCell
+        cell.layer.backgroundColor = UIColor.clear.cgColor
         if !filteredData.isEmpty {
             let circle = filteredData[indexPath.row]
             cell.configure(with: circle)

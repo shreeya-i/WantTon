@@ -21,6 +21,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postsTableView.reloadData()
+        
         view.backgroundColor = .white
         
         createDummyData()
@@ -112,8 +114,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func didTapButton() {
-        let pushViewController = CreatePostViewController()
-        navigationController?.pushViewController(pushViewController, animated: true)
+        let createPost = CreatePostViewController()
+        createPost.homeController = self
+        navigationController?.pushViewController(createPost, animated: true)
     }
 
 }

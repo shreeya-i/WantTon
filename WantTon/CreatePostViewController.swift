@@ -22,6 +22,7 @@ class CreatePostViewController: UIViewController {
     let circleTableView = UITableView()
     let cellReuseIdentifier = "hello"
     var circleData : [Circle] = []
+    var homeController: HomeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +134,8 @@ class CreatePostViewController: UIViewController {
     }
     
     @objc func didTapPost() {
+        let newPost = Post(user: "hello", image: "avocadoes.jpeg", caption: "fhdj", distance: "", address: "")
+        homeController!.postData.append(newPost)
         navigationController?.popViewController(animated: true)
     }
     

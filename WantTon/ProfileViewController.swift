@@ -15,7 +15,6 @@ private let sectionPadding: CGFloat = 4
 private let cellReuseIdentifier = "hello"
 
 protocol ProfileDelegate: AnyObject {
-   // func changePfp(newPfp: String)
     func changeName(newName: String)
     func changeCity(newCity: String)
 }
@@ -173,6 +172,17 @@ class ProfileViewController: UIViewController {
         pushViewController.delegate = self
     }
 
+}
+
+extension ProfileViewController: UICollectionViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        let vc = SingleUserPostViewController()
+        self.present(vc, animated: true) {
+            vc.configure(with: post)
+        }
+        
+    }
 }
 
 extension ProfileViewController: UICollectionViewDataSource {

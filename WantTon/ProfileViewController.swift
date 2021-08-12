@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     
-    let samplepost = Post(user: "Tyler Creator", image: "carrots.jpeg", caption: "homegrown carrots", distance: "", address: "Times Square")
+    let samplepost = Post(user: "Tyler Creator", image: "apples.jpeg", caption: "homegrown carrots", distance: "", address: "Times Square")
     let samplepost2 = Post(user: "Tyler Creator", image: "potatoes.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
     let samplepost3 = Post(user: "Tyler Creator", image: "eggs.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")
     let samplepost4 = Post(user: "Tyler Creator", image: "bread.jpeg", caption: "3 potatoes", distance: "", address: "Times Square")

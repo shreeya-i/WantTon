@@ -160,9 +160,11 @@ class SignUpViewController: UIViewController {
     @objc func didTapButton() {
         
         if let userName = nameField.text,
-           let userCity = cityField.text{
+           let userCity = cityField.text,
+           let userAddress = addressField.text{
             userDefaults.set(userCity, forKey: "userCity")
             userDefaults.set(userName, forKey: "userName")
+            userDefaults.set(userAddress, forKey: "userAddress")
     }
         self.dismiss(animated: true)
     }

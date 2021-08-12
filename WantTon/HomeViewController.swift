@@ -17,11 +17,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var filteredData : [Post] = []
     var filtered = false
     let searchField = UITextField()
+    
+    override func viewWillAppear(_ animated: Bool) {
+            postsTableView.reloadData()
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        postsTableView.reloadData()
         
         view.backgroundColor = .white
         

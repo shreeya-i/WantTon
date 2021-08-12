@@ -19,6 +19,11 @@ class CreatePostViewController: UIViewController {
     
     var imageToPass = UIImage()
     
+    var name: String = "John Doe"
+    var address: String = "123 Lane Street"
+    
+    let userDefaults = UserDefaults.standard
+    
     let circleTableView = UITableView()
     let cellReuseIdentifier = "hello"
     var circleData : [Circle] = []
@@ -134,7 +139,14 @@ class CreatePostViewController: UIViewController {
     }
     
     @objc func didTapPost() {
-        let newPost = Post(user: "hello", image: "avocadoes.jpeg", caption: "fhdj", distance: "", address: "")
+        
+        if let userNamee = userDefaults.string(forKey: "userName"),
+           let userAddress = userDefaults.string(forKey: "userAddress"){
+            name = userNamee
+            address = userAddress
+        }
+        
+        let newPost = Post(user: name, image: "apples.jpeg", caption: "Freshly grown apples!", distance: "", address: address)
         homeController!.postData.insert(newPost, at: 0)
         navigationController?.popViewController(animated: true)
     }

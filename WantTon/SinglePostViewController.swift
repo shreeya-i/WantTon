@@ -109,7 +109,7 @@ class SinglePostViewController: UIViewController {
         userName.text = post.user
         distance.text = post.distance
         productImage.image = UIImage(named: post.image)
-        caption.text = "Description: \(post.caption)"
+        caption.text = "\(post.caption)"
         location.text = "Pickup Location: \(post.address)"
     }
     

@@ -135,7 +135,7 @@ class CreatePostViewController: UIViewController {
     
     @objc func didTapPost() {
         let newPost = Post(user: "hello", image: "avocadoes.jpeg", caption: "fhdj", distance: "", address: "")
-        homeController!.postData.append(newPost)
+        homeController!.postData.insert(newPost, at: 0)
         navigationController?.popViewController(animated: true)
     }
     

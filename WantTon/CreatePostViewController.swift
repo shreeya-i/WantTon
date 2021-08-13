@@ -60,6 +60,9 @@ class CreatePostViewController: UIViewController {
         enterCaption.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.2)
         enterCaption.keyboardType = UIKeyboardType.default
         enterCaption.font = UIFont.systemFont(ofSize: 16)
+//        enterCaption.clipsToBounds = true
+//        enterCaption.layer.cornerRadius = 10.0
+        enterCaption.contentInset = UIEdgeInsets(top: 8,left: 7,bottom: 0,right: -7)
         view.addSubview(enterCaption)
         
         circlesLabel.text = "Add to Circles:"

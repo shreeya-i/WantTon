@@ -33,7 +33,7 @@ class AddToCircleTableViewCell: UITableViewCell {
         circleImage.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(circleImage)
         
-        selectButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.7)
+        selectButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.6)
         selectButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
         selectButton.tintColor = .white
         selectButton.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class AddToCircleTableViewCell: UITableViewCell {
                 sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
             }
             else{
-                sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.7)
+                sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.6)
             }
     }
     

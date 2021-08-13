@@ -14,6 +14,7 @@ class EditProfileViewController: UIViewController {
     let saveButton = UIButton()
     let backButton = UIButton()
     let pfp = UIImageView(frame: CGRect(x: 0,y: 0,width: 150,height: 150))
+    let addPfpLabel = UILabel()
     let line1 = UIView()
     let nameLabel = UILabel()
     let enterName = UITextField()
@@ -51,6 +52,12 @@ class EditProfileViewController: UIViewController {
         pfp.translatesAutoresizingMaskIntoConstraints = false
         pfp.image = UIImage(named: "defaultpfp.jpeg")
         view.addSubview(pfp)
+        
+        addPfpLabel.font = UIFont.systemFont(ofSize: 15)
+        addPfpLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        addPfpLabel.text = "Change Profile Photo"
+        addPfpLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(addPfpLabel)
         
         line1.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         line1.translatesAutoresizingMaskIntoConstraints = false
@@ -133,9 +140,14 @@ class EditProfileViewController: UIViewController {
             ])
         
         NSLayoutConstraint.activate([
+            addPfpLabel.topAnchor.constraint(equalTo: pfp.bottomAnchor, constant: 20),
+            addPfpLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             line1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             line1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            line1.topAnchor.constraint(equalTo: pfp.bottomAnchor, constant: 30),
+            line1.topAnchor.constraint(equalTo: addPfpLabel.bottomAnchor, constant: 30),
             line1.heightAnchor.constraint(equalToConstant: 2)
             ])
         

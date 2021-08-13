@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let samplepost5 = Post(user: "Teri Dactyl", image: "tomatoes.jpeg", caption: "tomatoes, have some unripe ones too", distance: "< 1 mile away", address: "Pacific Commons Starbucks")
         let samplepost6 = Post(user: "Usnavi Alnigh", image: "grains.jpeg", caption: "grains! unsure what they are", distance: "2 miles away", address: "Pacific Commons Starbucks")
         let samplepost7 = Post(user: "Annie Smith", image: "eggs.jpeg", caption: "Eggs from my chicken", distance: "1.5 miles away", address: "Pacific Commons Starbucks")
-        postData = [samplepost4, samplepost, samplepost5, samplepost6, samplepost3, samplepost2, samplepost7]
+        postData = [samplepost4, samplepost6, samplepost5, samplepost, samplepost3, samplepost2, samplepost7]
     }
     
     func setUpViews() {

@@ -33,6 +33,8 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        circleTableView.reloadData()
+        
         view.backgroundColor = .white
         
 //        background.image = UIImage(named: "background")

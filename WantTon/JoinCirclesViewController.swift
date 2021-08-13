@@ -39,11 +39,15 @@ class JoinCirclesViewController: UIViewController {
     }
     
     func setUpDummyData(){
-        let samplecircle1 = Circle(name: "Felipe Common Neighbors", image: "group1.jpeg")
-        let samplecircle2 = Circle(name: "Cornell University", image: "group2.jpeg")
-        let samplecircle3 = Circle(name: "Yale Neighborhood", image: "group3.jpeg")
-        let samplecircle4 = Circle(name: "BU Food Exchange", image: "group4.jpeg")
-        circleData = [samplecircle1, samplecircle2, samplecircle3, samplecircle4, samplecircle1, samplecircle2, samplecircle3, samplecircle4]
+        let samplecircle1 = Circle(name: "Neighborhood 4", image: "group4.jpeg")
+        let samplecircle2 = Circle(name: "JOINUS", image: "group5.jpeg")
+        let samplecircle3 = Circle(name: "SoHo", image: "group6.jpeg")
+        let samplecircle4 = Circle(name: "werneighbors", image: "circle.png")
+        let samplecircle5 = Circle(name: "Patterson Building", image: "group3.jpeg")
+        let samplecircle6 = Circle(name: "Neighorhood 5", image: "group1.jpeg")
+        let samplecircle7 = Circle(name: "join this if ur cool", image: "group2.jpeg")
+        let samplecircle8 = Circle(name: "Floor 11", image: "circle.png")
+        circleData = [samplecircle1, samplecircle2, samplecircle3, samplecircle4, samplecircle5, samplecircle6, samplecircle7, samplecircle8]
     }
     
     func setUpConstraints() {

@@ -33,7 +33,7 @@ class JoinCirclesTableViewCell: UITableViewCell {
         circleImage.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(circleImage)
         
-        joinButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.7)
+        joinButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.6)
         joinButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
         joinButton.tintColor = .white
         joinButton.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class JoinCirclesTableViewCell: UITableViewCell {
                 sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
             }
             else{
-                sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.7)
+                sender.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.6)
             }
     }
     

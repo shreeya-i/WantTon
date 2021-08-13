@@ -48,7 +48,7 @@ class SinglePostViewController: UIViewController {
         availableTimes.font = UIFont.boldSystemFont(ofSize: 17)
         availableTimes.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
         availableTimes.translatesAutoresizingMaskIntoConstraints = false
-        availableTimes.text = "Available Times:"
+        availableTimes.text = "Available Times: 5-9 PM"
         view.addSubview(availableTimes)
         
         interestButton.backgroundColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 0.7)
@@ -66,8 +66,8 @@ class SinglePostViewController: UIViewController {
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            userName.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            userName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
+            userName.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            userName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
         ])
         
         NSLayoutConstraint.activate([
@@ -76,30 +76,30 @@ class SinglePostViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 10),
+            productImage.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 30),
             productImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 350)
         ])
         
         NSLayoutConstraint.activate([
-            caption.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 10),
+            caption.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 30),
             caption.leadingAnchor.constraint(equalTo: userName.leadingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            location.topAnchor.constraint(equalTo: caption.bottomAnchor, constant: 10),
+            location.topAnchor.constraint(equalTo: caption.bottomAnchor, constant: 8),
             location.leadingAnchor.constraint(equalTo: userName.leadingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            availableTimes.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 10),
+            availableTimes.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 8),
             availableTimes.leadingAnchor.constraint(equalTo: userName.leadingAnchor)
         ])
         
         NSLayoutConstraint.activate ([
             interestButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            interestButton.topAnchor.constraint(equalTo: availableTimes.bottomAnchor, constant: 30),
+            interestButton.topAnchor.constraint(equalTo: availableTimes.bottomAnchor, constant: 50),
             interestButton.heightAnchor.constraint(equalToConstant: 40),
             interestButton.widthAnchor.constraint(equalToConstant: 130)
         ])

@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController {
         passwordField.borderStyle = UITextField.BorderStyle.roundedRect
         passwordField.keyboardType = UIKeyboardType.default
         passwordField.placeholder = "Password"
-        passwordField.isSecureTextEntry = true
+       // passwordField.isSecureTextEntry = true
         passwordField.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
         view.addSubview(passwordField)
         

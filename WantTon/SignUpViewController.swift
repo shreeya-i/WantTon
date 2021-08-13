@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    private var logo = UIImageView()
     let background = UIImageView()
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
@@ -36,6 +37,10 @@ class SignUpViewController: UIViewController {
 //        background.image = UIImage(named: "background")
 //        background.translatesAutoresizingMaskIntoConstraints = false
 //        view.addSubview(background)
+        
+        logo.image = UIImage(named: "wantonlogo.png")
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logo)
         
         titleLabel.font = UIFont.boldSystemFont(ofSize: 35)
         titleLabel.textColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
@@ -104,12 +109,19 @@ class SignUpViewController: UIViewController {
 //        ])
         
         NSLayoutConstraint.activate ([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logo.heightAnchor.constraint(equalToConstant: 120),
+            logo.widthAnchor.constraint(equalToConstant: 120)
+        ])
+        
+        NSLayoutConstraint.activate ([
+            titleLabel.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 10),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate ([
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
             subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         

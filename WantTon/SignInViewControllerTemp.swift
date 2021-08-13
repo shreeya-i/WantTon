@@ -91,6 +91,7 @@ class SignInViewControllerTemp: UIViewController {
             background.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
+        
         NSLayoutConstraint.activate ([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 185),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)

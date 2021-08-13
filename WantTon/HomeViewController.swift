@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
-    
+
     private var createPostButton = UIButton()
     let postsTableView = UITableView()
     let cellReuseIdentifier = "hello"
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setUpConstraints() {
-        
+       
         NSLayoutConstraint.activate ([
             searchField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             searchField.topAnchor.constraint(equalTo: createPostButton.topAnchor),

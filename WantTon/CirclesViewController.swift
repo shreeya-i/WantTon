@@ -13,6 +13,8 @@ protocol CircleDelegate: AnyObject {
 
 class CirclesViewController: UIViewController, UITextFieldDelegate {
     
+    var createCircleButton = UIButton()
+    
     let background = UIImageView()
     let joinButton = UIButton()
     let circlesLabel = UILabel()
@@ -23,6 +25,10 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
     var filteredData : [Circle] = []
     var filtered = false
     let searchField = UITextField()
+    
+    override func viewWillAppear(_ animated: Bool) {
+            circleTableView.reloadData()
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,12 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         circlesLabel.text = "Circles"
         circlesLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(circlesLabel)
+        
+        createCircleButton.translatesAutoresizingMaskIntoConstraints = false
+        createCircleButton.tintColor = UIColor(red: 45/225, green: 128/225, blue: 36/225, alpha: 1.0)
+        createCircleButton.addTarget(self, action: #selector(didTapCreateButton), for: .touchUpInside)
+        createCircleButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        view.addSubview(createCircleButton)
         
         searchField.translatesAutoresizingMaskIntoConstraints = false
         searchField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -73,6 +85,12 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         navigationController?.pushViewController(pushViewController, animated: true)
     }
     
+    @objc func didTapCreateButton() {
+        let createCircle = CreateCircleViewController()
+        createCircle.homeController = self
+        self.present(createCircle, animated: true)
+    }
+    
     func createDummyData() {
         let samplecircle1 = Circle(name: "Felipe Common Neighbors", image: "group1.jpeg")
         let samplecircle2 = Circle(name: "Cornell University", image: "group2.jpeg")
@@ -93,6 +111,11 @@ class CirclesViewController: UIViewController, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             circlesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35),
             circlesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            createCircleButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            createCircleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
         
         NSLayoutConstraint.activate ([
